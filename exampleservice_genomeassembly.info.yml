@@ -1,0 +1,8 @@
+name: "Example Service: Genome Assembly"
+type: module
+description: "Provides a service for searching genome assemblies stored in Chado."
+package: "LS Tripal Tutorials"
+core_version_requirement: ^9 || ^10
+dependencies:
+  - tripal
+  - tripal_chado
