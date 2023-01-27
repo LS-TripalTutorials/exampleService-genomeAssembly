@@ -1,25 +1,17 @@
 ---
 layout: page
-title: Tw-Jekyll Theme
+title: Tripal Services and Dependency Injection: Genome Assemblies Example
 permalink: /
+tags:
+  - Tripal 4
 ---
 
-# Welcome to Tailwind Jekyll!
+**Lacey-Anne Sanderson**
 
-This is a [starter template](https://vsoch.github.com/tw-jekyll/) for a Tailwind jekyll theme, based
-on [these docs](https://github.com/superfly/docs) that are based on [Tailwind css](https://tailwindcss.com/docs/installation),
-however everything has been modified to work on GitHub pages (using Jekyll). If you don't need
-native deployment on GitHub pages, then please consider checking out Tailwind. 
-The original [Apache License](https://github.com/vsoch/tw-jekyll/tree/main/LICENSE) is included.
+*Core Tripal Developer, University of Saskatchewan, Canada*
 
-## Purpose
+This tutorial and associated documentation will teach you how to create a Tripal service and use dependency injection to make the new Tripal DBX Chado database connection available within your code.
 
-GitHub pages uses Jekyll natively, so when I make documentation, I typically
-look for Jekyll templates. Why? Using Jekyll means that I can use markdown,
-and allow for users to easily contribute, and build automatically just by
-way of pushing to a main branch (or general GitHub pages).
+The tutorial will walk you through a hands-on example with code samples and short explanations guiding you through. The service created in the example is focused on providing access to genome assemblies stored in Chado using best practices.
 
-{% include callout.html text="I fell in love with this template as soon as I saw it, and knew that I wanted others to be empowered to use it." %}
-
-For getting started with development, see the {% include doc.html name="Getting Started" path="getting-started" %} page. Would you like to request a feature or contribute? [Open an issue]({{ site.repo }}/issues)
-
+In the left sidebar you will also notice an "Explanations" section which will describe more in depth what a service is, when you will want to use one and what I mean by dependency injection. These are provided to help you guide you to deeper understanding beyond the code given in the tutorial. It is separated out to keep the hands-on tutorial leaner and less overwhelming.
