@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LS Tripal Tutorials</title>
+    <description>A tutorial on how to create a Tripal/Drupal service for a Genome Assembly search/access Service using dependency injection.
+</description>
+    <link>/lstrptut_s4rnhy/</link>
+    <atom:link href="/lstrptut_s4rnhy/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 27 Jan 2023 16:35:47 -0600</pubDate>
+    <lastBuildDate>Fri, 27 Jan 2023 16:35:47 -0600</lastBuildDate>
+    <generator>Jekyll v3.9.2</generator>
+    
+  </channel>
+</rss>

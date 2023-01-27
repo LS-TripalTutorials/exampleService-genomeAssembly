@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tripal Services and Dependency Injection: Genome Assemblies Example
+title: "Tripal Services and Dependency Injection: Genome Assemblies Example"
 permalink: /
 tags:
   - Tripal 4
