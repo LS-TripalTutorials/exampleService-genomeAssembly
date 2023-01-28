@@ -68,8 +68,8 @@
   background-color: #F7F7F7;
   color: #333;
 }
- 
- 
+
+
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic);
 blockquote{
   font-family:Open Sans;
@@ -100,4 +100,56 @@ blockquote span{
   font-style: normal;
   font-weight: bold;
   margin-top:1em;
+}
+
+/**
+ * Author Card Styling
+ */
+.firstinfo, .badgescard, .author-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 500px;
+  min-height: 100px;
+  padding: 20px;
+  border-radius: 3px;
+  background-color: #fafafa;
+  box-shadow: 0px 10px 20px rgba(55, 23, 87, 0.2);
+  margin-bottom: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.firstinfo {
+  flex-direction: row;
+  z-index: 2;
+  position: relative;
+}
+.firstinfo img {
+  border-radius: 50%;
+  margin: 0 !important;
+  width: 90px;
+  height: 90px;
+}
+.firstinfo .profileinfo {
+  padding: 0px 20px;
+}
+.firstinfo .profileinfo .name {
+  font-size: 28px;
+  line-height: 24px;
+  color: #371757;
+}
+.firstinfo .profileinfo .position {
+  font-size: 12px;
+  color: #2c2730;
+  font-style: italic;
+}
+.firstinfo .profileinfo p.bio {
+  font-size: 14px;
+  padding-top: 10px;
+  color: #424045;
+  line-height: 1.2;
 }

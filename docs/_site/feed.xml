@@ -4,10 +4,10 @@
     <title>LS Tripal Tutorials</title>
     <description>A tutorial on how to create a Tripal/Drupal service for a Genome Assembly search/access Service using dependency injection.
 </description>
-    <link>/lstrptut_s4rnhy/</link>
-    <atom:link href="/lstrptut_s4rnhy/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 27 Jan 2023 16:35:47 -0600</pubDate>
-    <lastBuildDate>Fri, 27 Jan 2023 16:35:47 -0600</lastBuildDate>
+    <link>http://0.0.0.0:4000/lstrptut_s4rnhy/</link>
+    <atom:link href="http://0.0.0.0:4000/lstrptut_s4rnhy/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 28 Jan 2023 12:50:55 -0600</pubDate>
+    <lastBuildDate>Sat, 28 Jan 2023 12:50:55 -0600</lastBuildDate>
     <generator>Jekyll v3.9.2</generator>
     
   </channel>

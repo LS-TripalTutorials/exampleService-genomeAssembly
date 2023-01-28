@@ -4,11 +4,11 @@ title: "Tripal Services and Dependency Injection: Genome Assemblies Example"
 permalink: /
 tags:
   - Tripal 4
+  - Services
+  - Dependency Injection
 ---
 
-**Lacey-Anne Sanderson**
-
-*Core Tripal Developer, University of Saskatchewan, Canada*
+{% include author-block.html %}
 
 This tutorial and associated documentation will teach you how to create a Tripal service and use dependency injection to make the new Tripal DBX Chado database connection available within your code.
 
