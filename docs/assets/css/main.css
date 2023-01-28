@@ -7,6 +7,24 @@
     margin-right: -2rem;
 }
 
+.text-violet {
+  color: #371757;
+}
+.border-violet {
+  border-color: #371757;
+}
+.hover-text-violet:hover {
+  color: #371757;
+}
+.hover-border-violet:hover {
+  border-color: #371757;
+}
+a.text-light-violet.active {
+  color: #8240ad;
+}
+.DocSearch-Button:hover {
+  color: #8d46b9;
+}
 
 .btn-blue {
   background-color: #405cf5;
