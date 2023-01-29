@@ -1,23 +1,18 @@
-- title: Documentation
-  url: docs
+- title: Tutorial
+  url: tutorial
   links:
-    - title: "Getting Started"
-      url: "docs/getting-started"
-      children:
-        - title: Features
-          url: "docs/getting-started#getting-started"
-        - title: Development
-          url: "docs/getting-started#development"
-        - title: Customization
-          url: "docs/getting-started#customization"
-    - title: "About"
-      url: "about"
-    - title: "News"
-      url: "news"
-- title: "Extras"
-  url: "docs/extras"
+    - title: "Setting up your dev environment"
+      url: "tutorial/setup"
+    - title: "Creating a custom service"
+      url: "tutorial/create-service"
+    - title: "Using a service"
+      url: "tutorial/use-service"
+- title: "Explanations"
+  url: "explanations"
   links:
-    - title: Quizzes
-      url: "docs/extras/example-quiz"
-    - title: Tags Page
-      url: "tags"
+    - title: "What is a service?"
+      url: "explain/what-service"
+    - title: "When do I need a service?"
+      url: "explain/when-service"
+    - title: "What is dependency Injection?"
+      url: "explain/what-dependency-injection"
