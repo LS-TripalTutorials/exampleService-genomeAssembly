@@ -206,3 +206,5 @@ dependencies:
 ```
 
 That said, this single file is quite powerful as it plugs this directory into the Drupal Module API. You will now be able to navigate to your Tripal development site and enable this module!
+
+![Enable the module on the extend page]({{ site.baseurl }}/assets/tutorial/admin-extend-screenshot.png)
