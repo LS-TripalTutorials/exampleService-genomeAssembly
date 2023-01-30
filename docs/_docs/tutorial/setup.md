@@ -15,11 +15,13 @@ It is best practice to create a git repository for your extension module. If you
 
 Now, clone this repository locally:
 
-```
-git clone https://github.com/LS-TripalTutorials/lstrptut_s4rnhy.git
-```
+{% capture terminal_command %}
 
-```
+git clone https://github.com/LS-TripalTutorials/lstrptut_s4rnhy.git
+
+{% endcapture %}
+{% capture terminal_output %}
+
 Cloning into 'lstrptut_s4rnhy'...
 remote: Enumerating objects: 282, done.
 remote: Counting objects: 100% (282/282), done.
@@ -27,7 +29,10 @@ remote: Compressing objects: 100% (189/189), done.
 remote: Total 282 (delta 92), reused 247 (delta 69), pack-reused 0
 Receiving objects: 100% (282/282), 2.18 MiB | 4.31 MiB/s, done.
 Resolving deltas: 100% (92/92), done.
-```
+
+{% endcapture %}
+
+{% include terminal.html commands=terminal_command output=terminal_output %}
 
 ## 2. Set-up Tripal Docker for Module Development
 
@@ -35,12 +40,13 @@ Navigate to the directory containing your module on the terminal. At this point 
 
 We are going to use Tripal Docker to create a fully contained development environment for Tripal and then link/mount this local directory inside that environment. This will allow you to make code changes locally and they will be reflected immediately in the development environment. It also ensures that the only requirement for this tutorial is docker!
 
-```
-cd lstrptut_s4rnhy
-docker run --publish=9000:80 --name=LStutorial -tid --volume=`pwd`:/var/www/drupal9/web/modules/lstrptut_s4rnhy tripalproject/tripaldocker:latest
-```
+{% capture terminal_command %}
 
-```
+docker run --publish=9000:80 --name=LStutorial -tid --volume=`pwd`:/var/www/drupal9/web/modules/lstrptut_s4rnhy tripalproject/tripaldocker:latest
+
+{% endcapture %}
+{% capture terminal_output %}
+
 Unable to find image 'tripalproject/tripaldocker:latest' locally
 latest: Pulling from tripalproject/tripaldocker
 8740c948ffd4: Already exists
@@ -78,17 +84,25 @@ a94efcbc9cc8: Pull complete
 Digest: sha256:1eb66a21a8686ed9391ba7bf2035823021fae0363e2fa2260eead7814627de9b
 Status: Downloaded newer image for tripalproject/tripaldocker:latest
 ab393d13a73a53057d0498ec8facc551302048d744909ccc7301cae523663cc9
-```
+
+{% endcapture %}
+
+{% include terminal.html commands=terminal_command output=terminal_output %}
 
 Then you simply start the database within your new development container:
 
-```
-docker exec LStutorial service postgresql restart
-```
+{% capture terminal_command %}
 
-```
+docker exec LStutorial service postgresql restart
+
+{% endcapture %}
+{% capture terminal_output %}
+
 Restarting PostgreSQL 13 database server: main.
-```
+
+{% endcapture %}
+
+{% include terminal.html commands=terminal_command output=terminal_output %}
 
 And now you have a fully functioning Tripal site which you can view at http://localhost:9000 in the web browser of your choice that is set-up to develop a new Tripal extension module!
 
@@ -98,9 +112,16 @@ Drush is a command line shell and Unix scripting interface for Drupal that ships
 
 The following command executes the drush generate command within your development container with the argument “module” to indicate that we would like it to generate a module skeleton for us.
 
-```
+{% capture terminal_command %}
+
 docker exec -it LStutorial drush generate module
-```
+
+{% endcapture %}
+{% capture terminal_output %}
+
+{% endcapture %}
+
+{% include terminal.html commands=terminal_command output=terminal_output %}
 
 It will also ask if you want to create a number of other things, leave the default “No” selected. Once it is done prompting you, it will create files in the docker container that are then sync’d with our local directory.
 

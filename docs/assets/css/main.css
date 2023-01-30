@@ -42,6 +42,56 @@ a.text-light-violet.active {
   line-height: 24px;
 }
 
+.text-gray-500 {
+  color: #5b5b61;
+}
+
+.terminal {
+  padding: 20px 30px;
+  margin-bottom: 20px;
+}
+.terminal .commands {
+  padding-left: 22px ;
+  text-indent: -22px ;
+}
+.terminal .output {
+  color: grey;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: pre;
+  overflow: auto;
+}
+
+table {
+  color: black;
+}
+thead {
+  border-top: 2px solid #bababf;
+  border-bottom: 2px solid #bababf;
+}
+thead tr th:nth-child(1) {
+  font-weight: bold;
+  text-align: right;
+  width: 180px;
+  padding: 0 15px;
+}
+thead tr th:nth-child(2) {
+  text-align: left;
+}
+tbody tr {
+  border-bottom: 1px solid #bababf;
+}
+tbody tr td:nth-child(1) {
+  font-weight: bold;
+  text-align: right;
+  width: 180px;
+  padding: 0 15px;
+}
+
 .btn-blue {
   background-color: #405cf5;
 }
