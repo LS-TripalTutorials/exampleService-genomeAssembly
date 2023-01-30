@@ -1,0 +1,4 @@
+services:
+  lstrptut_s4rnhy.genomeassemblies:
+    class: Drupal\lstrptut_s4rnhy\GenomeAssemblies
+    arguments: ['@tripal_chado.database', '@tripal.logger']
