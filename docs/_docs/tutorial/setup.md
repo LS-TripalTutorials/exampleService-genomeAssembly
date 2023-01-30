@@ -13,6 +13,8 @@ It is best practice to create a git repository for your extension module. If you
 | Repository Name | lstrptut_s4rnhy |
 | Description | A tutorial on how to create a Tripal/Drupal service for a Genome Assembly search/access Service using dependency injection. |
 
+![GitHub Create Repo Screenshot]({{ site.baseurl }}/assets/tutorial/create-repo.png)
+
 Now, clone this repository locally:
 
 {% capture terminal_command %}
@@ -31,8 +33,13 @@ Receiving objects: 100% (282/282), 2.18 MiB | 4.31 MiB/s, done.
 Resolving deltas: 100% (92/92), done.
 
 {% endcapture %}
-
 {% include terminal.html commands=terminal_command output=terminal_output %}
+
+{% capture info_notice %}
+If you already have an existing module that you wish to add a service to, skip this section and replace <code>lstrptut_s4rnhy</code> with the name of your module anywhere it appears.
+{% endcapture %}
+
+{% include callout.html text=info_notice type="info" %}
 
 ## 2. Set-up Tripal Docker for Module Development
 
@@ -42,7 +49,7 @@ We are going to use Tripal Docker to create a fully contained development enviro
 
 {% capture terminal_command %}
 
-docker run --publish=9000:80 --name=LStutorial -tid --volume=`pwd`:/var/www/drupal9/web/modules/lstrptut_s4rnhy tripalproject/tripaldocker:latest
+docker run --publish=80:80 --name=LStutorial -tid --volume=`pwd`:/var/www/drupal9/web/modules/lstrptut_s4rnhy tripalproject/tripaldocker:latest
 
 {% endcapture %}
 {% capture terminal_output %}
@@ -104,13 +111,26 @@ Restarting PostgreSQL 13 database server: main.
 
 {% include terminal.html commands=terminal_command output=terminal_output %}
 
-And now you have a fully functioning Tripal site which you can view at http://localhost:9000 in the web browser of your choice that is set-up to develop a new Tripal extension module!
+And now you have a fully functioning Tripal site which you can view at [http://localhost:80](http://localhost:80) in the web browser of your choice that is set-up to develop a new Tripal extension module!
 
 ## 3. Use Drush to Create a Module Skeleton
 
 Drush is a command line shell and Unix scripting interface for Drupal that ships with many commands and code generators. It is included in TripalDocker and we will use it in this tutorial to generate skeleton code for our module and eventually our service as well.
 
 The following command executes the drush generate command within your development container with the argument “module” to indicate that we would like it to generate a module skeleton for us.
+
+These are the values for the questions asked by the generator:
+
+| Value                                                               | Description                                                    |
+|---------------------------------------------------------------------|----------------------------------------------------------------|
+| Example Service: Genome Assembly                                    | Module name: the human-readable name of the module.            |
+| lstrptut_s4rnhy                                                     | Module machine name: used within code to identify this module. |
+| Provides a service for searching genome assemblies stored in Chado. | Module description                                             |
+| LS Tripal Tutorials                                                 | Package: Used to group modules on the install page.            |
+| tripal,tripal_chado                                                 | Dependencies (comma separated)                                 |
+| Yes                                                                 | Would you like to create module file?                          |
+
+And this is the command and it's output in the terminal:
 
 {% capture terminal_command %}
 
@@ -119,15 +139,62 @@ docker exec -it LStutorial drush generate module
 {% endcapture %}
 {% capture terminal_output %}
 
+Welcome to module generator!
+––––––––––––––––––––––––––––––
+
+Module name [Web]:
+➤ Example Service: Genome Assembly
+
+Module machine name [example_service_genome_assembly]:
+➤ lstrptut_s4rnhy
+
+Module description [Provides additional functionality for the site.]:
+➤ Provides a service for searching genome assemblies stored in Chado.
+
+Package [Custom]:
+➤ LS Tripal Tutorials
+
+Dependencies (comma separated):
+➤ tripal,tripal_chado
+
+Would you like to create module file? [No]:
+➤ Yes
+
+Would you like to create install file? [No]:
+➤
+
+Would you like to create libraries.yml file? [No]:
+➤
+
+Would you like to create permissions.yml file? [No]:
+➤
+
+Would you like to create event subscriber? [No]:
+➤
+
+Would you like to create block plugin? [No]:
+➤
+
+Would you like to create a controller? [No]:
+➤
+
+Would you like to create settings form? [No]:
+➤
+
+The following directories and files have been created or updated:
+–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+• /var/www/drupal9/web/modules/lstrptut_s4rnhy/lstrptut_s4rnhy.info.yml
+• /var/www/drupal9/web/modules/lstrptut_s4rnhy/lstrptut_s4rnhy.module
+
 {% endcapture %}
 
 {% include terminal.html commands=terminal_command output=terminal_output %}
 
 It will also ask if you want to create a number of other things, leave the default “No” selected. Once it is done prompting you, it will create files in the docker container that are then sync’d with our local directory.
 
-At this point our module is really just a YAML file describing our module to Drupal.
+At this point our module is really just a YAML file describing our module to Drupal and an empty `.module` file.
 
-```yml
+```yaml
 name: "Example Service: Genome Assembly"
 type: module
 description: "Provides a service for searching genome assemblies stored in Chado."

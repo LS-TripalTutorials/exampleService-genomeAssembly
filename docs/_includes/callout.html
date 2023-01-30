@@ -1,2 +1,2 @@
 
-<div class="callout" {% if include.color %}style="background-color: {{ include.color }}"{% endif %}>{{ include.text }}</div>
+<div class="callout" class="callout {{ include.type }}" {% if include.color %}style="background-color: {{ include.color }}"{% endif %}>{{ include.text }}</div>
